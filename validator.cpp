@@ -1,3 +1,13 @@
+/*
+    Sourced with Access Date 20.04.2026:
+    https://github.com/JulianNeeleman/pizza/blob/master/tools/validator.cpp
+
+    Compile:
+    g++ -o validator validator.cpp
+
+    Run:
+    ./validator <input_file> <result_file>
+*/
 #include <iostream>
 #include <fstream>
 
@@ -9,7 +19,7 @@ int r1, r2, c1, c2;
  *  Print the dimensions of the slice in human-readable form.
  */
 void print_slice(const int s) {
-    cout    << "Slice " << s << " between rows (" 
+    cout    << "Slice " << s << " between rows ("
             << r1 << "," << r2 << ") and columns ("
             << c1 << "," << c2 << "): ";
 }
@@ -109,13 +119,13 @@ int main(int argc, char *argv[])
         if (M < L) {
             print_slice(s);
             cout << L << " mushrooms required, but only " << M << " found." << endl;
-            return -1; 
+            return -1;
         }
 
         if (T < L) {
             print_slice(s);
             cout << L << " tomatoes required, but only " << T << " found." << endl;
-            return -1; 
+            return -1;
         }
 
         total += M + T;
